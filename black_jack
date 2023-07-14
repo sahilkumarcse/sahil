@@ -1,0 +1,68 @@
+#stack_of_cards
+import random
+cards=["a",2,3,4,5,6,7,8,9,10,10,10,10]
+random.shuffle(cards)
+#converting a into int for com
+computer_cards=[cards[random.randint(0,12)],cards[random.randint(0,12)]]
+player_cards=[cards[random.randint(0,12)],cards[random.randint(0,12)]]
+if "a" in computer_cards:
+    if computer_cards[0]=="a":
+        if computer_cards[-1]<9:
+            computer_cards[0]=11
+        else:
+            computer_cards[0]=1
+    else:
+        if computer_cards[0]<9:
+            computer_cards[-1]=11
+        else:
+            computer_cards[-1]=1
+#converting a into int for player
+def a_to_player():
+    print(player_cards)
+if "a" in player_cards:
+    t=input("wants to consider a as 1 or 11: ")
+    for q in range(0,len(player_cards)):
+        if player_cards[q]=="a":
+            player_cards[q]=int(t)
+a_to_player
+#getting_total
+c=0
+p=0
+for i in range(0,len(computer_cards)):
+    c=c+computer_cards[i]
+for i in range(0,len(player_cards)):
+    p=p+player_cards[i]
+#checking 17 mark.
+if int(computer_cards[0])+int(computer_cards[1])<17:
+    computer_cards.append(cards[random.randint(1,12)])
+    c=0
+    for i in range(0, len(computer_cards)):
+        c = c + computer_cards[i]
+if int(player_cards[0])+int(player_cards[1])<17:
+    player_cards.append(cards[random.randint(0,12)])
+    a_to_player
+    p=0
+    for i in range(0, len(player_cards)):
+        p = p + player_cards[i]
+else:
+    option = input("want another card?")
+    if option == "y":
+        player_cards.append(cards[random.randint(1, 12)])
+    a_to_player
+    p=0
+    for i in range(0, len(player_cards)):
+        p = p + player_cards[i]
+print(f"your cards are{player_cards},computer got[X,{computer_cards[0]}]")
+#result
+if c>21 and p>21:
+    print(f"DRAW.\n your score is:{p}\ncomputer score is:{c} with cards{computer_cards}")
+elif c>21 :
+    print(f"you won.\n your score is:{p}\ncomputer score is:{c} with cards{computer_cards}")
+elif p>21:
+    print(f"you loose.\n your score is:{p}\ncomputer score is:{c} with cards{computer_cards}")
+elif c<p:
+    print(f"you won.\n your score is:{p}\ncomputer score is:{c} with cards{computer_cards}")
+elif c>p:
+    print(f"you loose.\n your score is:{p}\ncomputer score is:{c} with cards{computer_cards}")
+else:
+    print(f"DRAW.\n your score is:{p}\ncomputer score is:{c} with cards{computer_cards}")

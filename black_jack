@@ -17,14 +17,14 @@ if "a" in computer_cards:
         else:
             computer_cards[-1]=1
 #converting a into int for player
-def a_to_player():
-    print(player_cards)
+
+print(player_cards)
 if "a" in player_cards:
     t=input("wants to consider a as 1 or 11: ")
     for q in range(0,len(player_cards)):
         if player_cards[q]=="a":
             player_cards[q]=int(t)
-a_to_player
+
 #getting_total
 c=0
 p=0
@@ -40,7 +40,12 @@ if int(computer_cards[0])+int(computer_cards[1])<17:
         c = c + computer_cards[i]
 if int(player_cards[0])+int(player_cards[1])<17:
     player_cards.append(cards[random.randint(0,12)])
-    a_to_player
+    print(player_cards)
+    if "a" in player_cards:
+        t=input("wants to consider a as 1 or 11: ")
+        for q in range(0,len(player_cards)):
+            if player_cards[q]=="a":
+                player_cards[q]=int(t)
     p=0
     for i in range(0, len(player_cards)):
         p = p + player_cards[i]
@@ -48,7 +53,12 @@ else:
     option = input("want another card?")
     if option == "y":
         player_cards.append(cards[random.randint(1, 12)])
-    a_to_player
+    print(player_cards)
+    if "a" in player_cards:
+        t=input("wants to consider a as 1 or 11: ")
+        for q in range(0,len(player_cards)):
+            if player_cards[q]=="a":
+                player_cards[q]=int(t)
     p=0
     for i in range(0, len(player_cards)):
         p = p + player_cards[i]

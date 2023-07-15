@@ -1,0 +1,48 @@
+celebs={
+    "Elon Musk":133.7,
+    "Barack Obama":133,
+    "Justin Bieber":113.2,
+    "Katy Perry":108.3,
+    "Rihanna":108.2,
+    "Cristiano Ronaldo":108.2,
+    "Taylor Swift":92.5,
+    "Narendra Modi":87.6,
+    "Donald J Trump":87.3,
+    "Lady Gaga":84.7,
+    "Youtube":78.8
+}
+score=0
+print(type(celebs["Youtube"]))
+
+def elon():
+    if a=="Elon Musk":
+        a, capital = random.choice(list(celebs.items()))
+        b, cap = random.choice(list(celebs.items()))
+    else:
+        b, cap = random.choice(list(celebs.items()))
+
+import random
+
+a, capital = random.choice(list(celebs.items()))
+b, cap = random.choice(list(celebs.items()))
+while True:
+    if a!=b:
+        inpo=input(f"who have more follwers a:({a}) or b:({b})")
+        if inpo=="a" and celebs[a]>celebs[b]:
+            score+=1
+            if a=="Elon Musk":
+                a, capital = random.choice(list(celebs.items()))
+                b, cap = random.choice(list(celebs.items()))
+            else:
+                b, cap = random.choice(list(celebs.items()))
+        elif inpo=="b" and celebs[a]<celebs[b]:
+            score+=1
+            if b=="Elon Musk":
+                a, capital = random.choice(list(celebs.items()))
+                b, cap = random.choice(list(celebs.items()))
+            else:
+                a=b
+                b, cap = random.choice(list(celebs.items()))
+        else:
+            print(f"you ar wrong. your score is {score}")
+            break

@@ -8,4 +8,4 @@ for i in range(1,4):
     no[zero-1]="0"
     print(f"{no[0]}    {no[1]}   {no[2]}\n{no[3]}    {no[4]}   {no[5]}\n{no[6]}    {no[7]}   {no[8]}")
 print(f"{no[0]}    {no[1]}   {no[2]}\n{no[3]}    {no[4]}   {no[5]}\n{no[6]}    {no[7]}   {no[8]}")
-print("game is over. Thanks for playing.")
+print("game is over. Thanks for playing. ")

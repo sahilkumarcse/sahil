@@ -1,0 +1,68 @@
+MENU = {
+    "espresso": {
+        "ingredients": {
+            "water": 50,
+            "coffee": 18,
+        },
+        "cost": 1.5,
+    },
+    "latte": {
+        "ingredients": {
+            "water": 200,
+            "milk": 150,
+            "coffee": 24,
+        },
+        "cost": 2.5,
+    },
+    "cappuccino": {
+        "ingredients": {
+            "water": 250,
+            "milk": 100,
+            "coffee": 24,
+        },
+        "cost": 3.0,
+    }
+}
+
+resources = {
+    "water": 300,
+    "milk": 200,
+    "coffee": 100,
+}
+#take input
+coffe=input("which flavour do you want espresso/latte/cappuccino")
+cos=MENU.get(coffe).get("cost")
+while True:
+    if resources["water"]>MENU.get(coffe).get("ingredients").get("water"):
+        if resources["coffee"]>MENU.get(coffe).get("ingredients").get("coffee"):
+            if resources["milk"]>100:
+                cash = input(f"give {cos}$ Y/N: ")
+                if cash.upper()=="Y":
+                    print(f"Here is your {coffe}. Thanks for coming")
+                    resources["water"]=resources["water"]-MENU.get(coffe).get("ingredients").get("water")
+                    resources["coffee"]=resources["coffee"]-MENU.get(coffe).get("ingredients").get("coffee")
+                    if coffe=="latte" or coffe=="cappuccino":
+                        resources["milk"] = resources["coffee"] > MENU.get(coffe).get("ingredients").get("milk")
+                else:
+                    print("you have to pay the price to get your coffee")
+            else:
+                milch=input("would you please refill the milk section Y/N: ")
+                if milch=="Y":
+                    resources["milk"]=200
+                else:
+                    break
+        else:
+            milch = input("would you please refill the coffee beans section Y/N: ")
+            if milch == "Y":
+                resources["coffee"] = 100
+            else:
+                break
+    else:
+        milch = input("would you please refill the water section Y/N: ")
+        if milch == "Y":
+            resources["water"] = 300
+        else:
+            break
+    coffe = input("which flavour do you want espresso/latte/cappuccino")
+    cos = MENU.get(coffe).get("cost")
+    #print(resources)

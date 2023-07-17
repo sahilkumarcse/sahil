@@ -1,0 +1,35 @@
+import turtle as t
+tos=t.Turtle()
+screen=t.Screen()
+tos.pensize(30)
+def forwards():
+    tos.forward(100)
+def backwards():
+    tos.backward(100)
+
+def lefts():
+    tos.left(90)
+
+def rights():
+    tos.right(90)
+
+def half_right():
+    tos.right(45)
+
+def half_left():
+    tos.left(45)
+
+screen.listen() #i forget to write thaht line.
+screen.onkey(key="w",fun=forwards)
+
+screen.onkey(key="s",fun=backwards)
+
+screen.onkey(key="a",fun=lefts)
+
+screen.onkey(key="d",fun=rights)
+
+screen.onkey(key="e",fun=half_right)
+
+screen.onkey(key="q",fun=half_left)
+
+screen.exitonclick()

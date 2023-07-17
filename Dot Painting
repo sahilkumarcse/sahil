@@ -1,0 +1,29 @@
+import turtle as t
+tos=t.Turtle()
+screen=t.Screen()
+tos.pensize(30)
+#tos.penup()
+#tos.right(180)
+#tos.forward(700)
+#tos.right(180)
+#tos.pendown()
+def start():
+    tos.penup()
+    tos.right(180)
+    tos.forward(500)
+    tos.right(90)
+    tos.forward(100)
+    tos.right(90)
+    tos.pendown()
+def draw():
+    tos.circle(10)
+    tos.penup()
+    tos.forward(100)
+    tos.pendown()
+for i in range(1,6):
+    draw()
+for i in range(1,6):
+    start()
+    for i in range(1,6):
+        draw()
+screen.exitonclick()

@@ -19,7 +19,7 @@ def half_right():
 def half_left():
     tos.left(45)
 
-screen.listen() #i forget to write thaht line.
+screen.listen() #i forget to write thaht line
 screen.onkey(key="w",fun=forwards)
 
 screen.onkey(key="s",fun=backwards)
